@@ -1,0 +1,66 @@
+{
+  "name": "leaveguard",
+  "version": "0.1.0",
+  "description": "Warn before users leave with unsaved changes, on page reloads and on in-app (SPA) navigation. Zero dependencies, works with any framework.",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./react": {
+      "types": "./dist/react.d.ts",
+      "default": "./dist/react.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "keywords": [
+    "unsaved-changes",
+    "beforeunload",
+    "navigation-guard",
+    "prevent-navigation",
+    "leave-page",
+    "dirty-form",
+    "navigation-api",
+    "spa",
+    "react",
+    "react-hook",
+    "framework-agnostic"
+  ],
+  "license": "MIT",
+  "author": "Shivang Ramola",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shiv7700/leaveguard.git"
+  },
+  "homepage": "https://github.com/shiv7700/leaveguard#readme",
+  "bugs": "https://github.com/shiv7700/leaveguard/issues",
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "jsdom": "^29.1.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.12"
+  }
+}
